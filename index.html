@@ -6,7 +6,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
     <title id="titApp">Aplicació gestió Sanitària</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+	 <link rel="stylesheet" type="text/css" href="style.css">
 <!-- PER MODAL 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -76,8 +76,10 @@
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
             <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties(this)">Malalties</button>
             <button type="button" id="btnGestMetges" class="btn btn-primary btn-block"  onClick="mostraGestioMetges()">Metges</button>
-            <br>
             <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp()">Control</button>
+			<a href="#">
+				<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny()">Explicació del diseny</button>
+			</a>
             <!-- <button type="button" class="btn btn-primary  btn-block" data-toggle="modal" data-target="#espaiModal">Open modal</button> -->
         </div>
         <!-- FINAL COLUMNA 1 >md 02 < -- > bloc control equerre -->
@@ -124,7 +126,7 @@
             <!-- INICI botonsIntroHospital -->
             <div class="text-center" id="botonsIntroHospital">
               <hr style="border: 1px solid green; border-radius: 10px;">
-              <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
+              <button type="button" class="btn btn-primary mt-4">Crear</button>
               <!-- <button type="button" class="btn btn-primary mt-4" onClick="ocultaGestioHospital(this)">Torna</button> -->
             </div>
             <!-- FINAL botonsIntroHospital -->
@@ -171,6 +173,26 @@
             </div>
           </div>
           <!-- FINAL divControls -->
+		   <!-- ------------------------------------------------------------------------------------ -->
+		   <!-- INICI divDiseny -->
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white  d-none" id="divDiseny">
+            <!-- mt margin top = 8    mt margin bottom = 8 -->
+            <h4  class="text-center mt-3 mb-3" >Control de l'aplicació</h4>
+            <div class="form-row" id="formControls">
+              <div class="text-center">
+                <p>
+					Text de exemple sobre la explicació del diseny de la web.
+				</p>
+                <button type="button" class="btn btn-primary mt-4" onClick="ocultaControls(this)">Torna</button>
+              </div>
+            </div>
+            <div class="form-row" id="formControls">
+              <div class="text-center">
+                <h2 class="text-center" id="h2ResutltatFormControls"></h2>
+              </div>
+            </div>
+          </div>
+          <!-- FINAL divDiseny -->
         <!-- ------------------------------------------------------------------------------------ -->
         <!-- ==================================================================================== -->   
         </div>
