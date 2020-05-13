@@ -2,6 +2,17 @@
 	margin-top: 6%;	
 }
 
+hr {
+	border-color: #18a3eb !important
+}
+
 a {
 	text-decoration: none !important;
+}
+
+.divs_contingut {
+	position: relative;
+    padding: 32px !important;
+    border-radius: 20px !important;
+    border: 2px solid #18a3eb !important;
 }
