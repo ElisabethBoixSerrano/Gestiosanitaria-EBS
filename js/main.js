@@ -190,12 +190,23 @@ function eliminaClass(elementRebut, nomClass) {
 
     
     function mostraDiseny(objecte){
+		document.getElementById('tancaDivDiseny').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divDiseny.classList.toggle("d-none");
+            mostraBotons();
+      }
       eleID_divPresentacio.classList.toggle("d-none");
       eleID_divDiseny.classList.toggle("d-none");
       amagaBotons();
    }
    
    function mostraGestioApp(objecte){
+	   document.getElementById('tancaDivControls').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divControls.classList.toggle("d-none");
+            mostraBotons();
+      }
+	  
       eleID_divPresentacio.classList.toggle("d-none");
       eleID_divControls.classList.toggle("d-none");
       amagaBotons();
@@ -230,9 +241,14 @@ function ocultaGestioHospital(objecteRebut){
    }
 
 function mostraGestioPacients(objecteRebut){
-      if (!conteClass(eleID_divPacient,"d-none")) {
-            afegirClass(eleID_divPacient,"d-none");
+	document.getElementById('tancaDivPacient').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divPacient.classList.toggle("d-none");
+            mostraBotons();
       }
+      /*if (!conteClass(eleID_divPacient,"d-none")) {
+            afegirClass(eleID_divPacient,"d-none");
+      }*/
       eleID_divPresentacio.classList.toggle("d-none");
       eleID_divPacient.classList.toggle("d-none");
       amagaBotons();
