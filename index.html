@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ca" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -6,7 +5,6 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
     <title id="titApp">Aplicació gestió Sanitària</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
 <!-- PER MODAL 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -76,8 +74,10 @@
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
             <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties(this)">Malalties</button>
             <button type="button" id="btnGestMetges" class="btn btn-primary btn-block"  onClick="mostraGestioMetges()">Metges</button>
-            <br>
             <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp()">Control</button>
+			<a href="#">
+				<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny()">Explicació del diseny</button>
+			</a>
             <!-- <button type="button" class="btn btn-primary  btn-block" data-toggle="modal" data-target="#espaiModal">Open modal</button> -->
         </div>
         <!-- FINAL COLUMNA 1 >md 02 < -- > bloc control equerre -->
@@ -88,7 +88,7 @@
           <!-- INICI eleID_divPresentacio -->
           <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white" id="divPresentacio">
               <!-- mt margin top = 8    mt margin bottom = 8 -->
-              <h4  class="text-center mt-3 mb-3" >Benvigut a l'aplicació de gestió Sanitària</h4>
+              <h4  class="text-center mt-3 mb-3" >Benvingut a l'aplicació de gestió Sanitària</h4>
               <p>Amb els botons del panell lateral, podràs accedir a tots els menus!</p>
           </div>
           <!-- FINAL eleID_divPresentacio -->
@@ -124,7 +124,7 @@
             <!-- INICI botonsIntroHospital -->
             <div class="text-center" id="botonsIntroHospital">
               <hr style="border: 1px solid green; border-radius: 10px;">
-              <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
+              <button type="button" class="btn btn-primary mt-4">Crear</button>
               <!-- <button type="button" class="btn btn-primary mt-4" onClick="ocultaGestioHospital(this)">Torna</button> -->
             </div>
             <!-- FINAL botonsIntroHospital -->
@@ -133,13 +133,14 @@
           <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI divPacients -->
           <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divPacient">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivPacient"><h3>&times;</h3></a>
              <!-- w-100  = width: 100% -->
             <h2 class="text-center">Pacients</h2>
             <p class="text-center">Introdueix les dades del pacients que vols ingressar:</p>
             <div id="dadesPacient"></div>
             <div class="text-center">
               <button type="button" class="btn btn-primary mt-4" onClick="ingressarPacients()">Ingressar</button>
-              <button type="button" class="btn btn-primary mt-4" onClick="ocultaGestioPacients(this)">Torna</button>
+              <!--<button type="button" class="btn btn-primary mt-4" onClick="ocultaGestioPacients(this)">Torna</button>-->
             </div>
           </div>
           <!-- FINAL divPacients -->
@@ -154,14 +155,15 @@
           <!-- FINAL divTractament -->
           <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI divControls -->
-          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white  d-none" id="divControls">
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divControls">
+		   <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivControls"><h3>&times;</h3></a>
             <!-- mt margin top = 8    mt margin bottom = 8 -->
             <h4  class="text-center mt-3 mb-3" >Control de l'aplicació</h4>
             <div class="form-row" id="formControls">
               <div class="text-center">
                 <button type="button" class="btn btn-primary mt-4" onClick="comprovacioInicial()" id="btnCheck">Check</button>
                 <button type="button" class="btn btn-primary mt-4" onClick="mostraNotFoud()" id="btnMostra404">Mostra error 404</button>
-                <button type="button" class="btn btn-primary mt-4" onClick="ocultaControls(this)">Torna</button>
+                <!--<button type="button" class="btn btn-primary mt-4" onClick="ocultaControls(this)">Torna</button>-->
               </div>
             </div>
             <div class="form-row" id="formControls">
@@ -171,6 +173,27 @@
             </div>
           </div>
           <!-- FINAL divControls -->
+		   <!-- ------------------------------------------------------------------------------------ -->
+		   <!-- INICI divDiseny -->
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divDiseny">
+		  <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivDiseny"><h3>&times;</h3></a>
+            <!-- mt margin top = 8    mt margin bottom = 8 -->
+            <h4  class="text-center mt-3 mb-3" >Explicació del diseny</h4>
+            <div class="form-row" id="formControls">
+              <div class="text-center">
+                <p>
+					Primer canvi notable es que, he afegit un altre boto precisament per poder explicar tot el que he anat disenyant per la web.
+				</p>
+                <!--<button type="button" class="btn btn-primary mt-4" onClick="ocultaDiseny(this)">Torna</button>-->
+              </div>
+            </div>
+            <div class="form-row" id="formControls">
+              <div class="text-center">
+                <h2 class="text-center" id="h2ResutltatFormControls"></h2>
+              </div>
+            </div>
+          </div>
+          <!-- FINAL divDiseny -->
         <!-- ------------------------------------------------------------------------------------ -->
         <!-- ==================================================================================== -->   
         </div>
