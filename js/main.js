@@ -11,12 +11,16 @@ const eleID_divPacient = document.getElementById("divPacient");
 
 const eleID_divControls = document.getElementById("divControls");
 
+const eleID_divDiseny = document.getElementById("divDiseny");
+
 const eleID_btnGestHospitals = document.getElementById("btnGestHospitals");
 const eleID_btnGestPacients = document.getElementById("btnGestPacients");
 const eleID_btnGestMalalties = document.getElementById("btnGestMalalties");
 const eleID_btnGestMetges = document.getElementById("btnGestMetges");
 
 const eleID_btnGestAplicacio = document.getElementById("btnGestAplicacio");
+
+const eleID_btnGestDiseny= document.getElementById("btnGestDiseny");
 
 const eleID_h2ResutltatFormControls = document.getElementById("h2ResutltatFormControls");
 
@@ -93,6 +97,9 @@ function mostraBotons() {
       eleID_btnGestMalalties.disabled = false;
       eleID_btnGestMetges.disabled = false;
       eleID_btnGestAplicacio.disabled = false;
+	  eleID_btnGestDiseny.disabled = false;
+	  
+	  
 
       $(eleID_btnGestHospitals).removeClass('btn-dark');
       $(eleID_btnGestHospitals).addClass('btn-primary');
@@ -108,6 +115,9 @@ function mostraBotons() {
 
       $(eleID_btnGestAplicacio).removeClass('btn-dark');
       $(eleID_btnGestAplicacio).addClass('btn-primary');
+	  
+	  $(eleID_btnGestDiseny).removeClass('btn-dark');
+      $(eleID_btnGestDiseny).addClass('btn-primary');
 }
 
 function amagaBotons() {
@@ -116,6 +126,7 @@ function amagaBotons() {
       eleID_btnGestMalalties.disabled = true;
       eleID_btnGestMetges.disabled = true;
       eleID_btnGestAplicacio.disabled = true;
+	   eleID_btnGestDiseny.disabled = true;
 
       $(eleID_btnGestHospitals).removeClass('btn-primary');
       $(eleID_btnGestHospitals).addClass('btn-dark');
@@ -131,6 +142,9 @@ function amagaBotons() {
 
       $(eleID_btnGestAplicacio).removeClass('btn-primary');
       $(eleID_btnGestAplicacio).addClass('btn-dark');
+	  
+	   $(eleID_btnGestDiseny).removeClass('btn-primary');
+      $(eleID_btnGestDiseny).addClass('btn-dark');
 }
 
 
@@ -175,7 +189,24 @@ function eliminaClass(elementRebut, nomClass) {
 
 
     
-    function mostraGestioApp(objecte){
+    function mostraDiseny(objecte){
+		document.getElementById('tancaDivDiseny').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divDiseny.classList.toggle("d-none");
+            mostraBotons();
+      }
+      eleID_divPresentacio.classList.toggle("d-none");
+      eleID_divDiseny.classList.toggle("d-none");
+      amagaBotons();
+   }
+   
+   function mostraGestioApp(objecte){
+	   document.getElementById('tancaDivControls').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divControls.classList.toggle("d-none");
+            mostraBotons();
+      }
+	  
       eleID_divPresentacio.classList.toggle("d-none");
       eleID_divControls.classList.toggle("d-none");
       amagaBotons();
@@ -210,9 +241,14 @@ function ocultaGestioHospital(objecteRebut){
    }
 
 function mostraGestioPacients(objecteRebut){
-      if (!conteClass(eleID_divPacient,"d-none")) {
-            afegirClass(eleID_divPacient,"d-none");
+	document.getElementById('tancaDivPacient').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divPacient.classList.toggle("d-none");
+            mostraBotons();
       }
+      /*if (!conteClass(eleID_divPacient,"d-none")) {
+            afegirClass(eleID_divPacient,"d-none");
+      }*/
       eleID_divPresentacio.classList.toggle("d-none");
       eleID_divPacient.classList.toggle("d-none");
       amagaBotons();
@@ -227,6 +263,12 @@ function ocultaGestioPacients(objecteRebut){
    function ocultaControls(objecteRebut){
       eleID_divPresentacio.classList.toggle("d-none");
       eleID_divControls.classList.toggle("d-none");
+      mostraBotons();
+   }
+   
+    function ocultaDiseny(objecteRebut){
+      eleID_divPresentacio.classList.toggle("d-none");
+      eleID_divDiseny.classList.toggle("d-none");
       mostraBotons();
    }
    
