@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ca" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -5,6 +6,7 @@
     <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
     <title id="titApp">Aplicació gestió Sanitària</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
 <!-- PER MODAL 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -72,11 +74,11 @@
               <!-- FINAL eleID_h4TitolPanell -->
             <button type="button" id="btnGestHospitals" class="btn btn-primary btn-block" onClick="mostraGestioHospital(this)">Hospital</button>
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
-            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties(this)">Malalties</button>
+            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraMalalties()">Malalties</button>
             <button type="button" id="btnGestMetges" class="btn btn-primary btn-block"  onClick="mostraGestioMetges()">Metges</button>
             <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp()">Control</button>
-		<a href="#">
-				<button style="margin-top: 6%;" type="button" id="btnGestDiseny" class="btn btn-primary btn-block" onclick="mostraDiseny()">Explicació del diseny</button>
+			<a href="#">
+				<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny()">Explicació del diseny</button>
 			</a>
             <!-- <button type="button" class="btn btn-primary  btn-block" data-toggle="modal" data-target="#espaiModal">Open modal</button> -->
         </div>
@@ -86,7 +88,7 @@
         <div class="col-md-10" id="divPanellEscriptori"> <!-- col-md-8  divPanellEscriptori -->
           <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI eleID_divPresentacio -->
-          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white" id="divPresentacio">
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white divs_contingut" id="divPresentacio">
               <!-- mt margin top = 8    mt margin bottom = 8 -->
               <h4  class="text-center mt-3 mb-3" >Benvingut a l'aplicació de gestió Sanitària</h4>
               <p>Amb els botons del panell lateral, podràs accedir a tots els menus!</p>
@@ -94,7 +96,7 @@
           <!-- FINAL eleID_divPresentacio -->
           <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI eleID_divHospital -->
-          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divHospital">
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none divs_contingut" id="divHospital">
             <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivHospital"><h3>&times;</h3></a>
             <h2 class="text-center">Gestió d'hospitals</h2>
             <hr style="border: 2px solid green; border-radius: 10px;">
@@ -132,7 +134,7 @@
           <!-- FINAL eleID_divHospital -->
           <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI divPacients -->
-          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divPacient">
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none divs_contingut" id="divPacient">
 		  <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivPacient"><h3>&times;</h3></a>
              <!-- w-100  = width: 100% -->
             <h2 class="text-center">Pacients</h2>
@@ -146,7 +148,7 @@
           <!-- FINAL divPacients -->
           <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI divTractament -->
-          <div class="w-100 mx-auto align-items-center border border-primary p-4 rounded shadow bg-white d-none" id="divTractament">
+          <div class="w-100 mx-auto align-items-center border border-primary p-4 rounded shadow bg-white d-none divs_contingut" id="divTractament">
             <!-- <h2 class="text-center">Hospital: <span id="nomHospitalGestio"></span></h2> -->
             <h2 class="text-center">Pacients en tractament:</h2>
             <!-- <p class="text-center">Pacients en tractament:</p> -->
@@ -154,8 +156,17 @@
           </div>
           <!-- FINAL divTractament -->
           <!-- ------------------------------------------------------------------------------------ -->
+		   <!-- INICI divMalalties -->
+          <div class="w-100 mx-auto align-items-center border border-primary p-4 rounded shadow bg-white d-none divs_contingut" id="divMalalties">
+		   <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivMalalties"><h3>&times;</h3></a>
+            <!-- <h2 class="text-center">Hospital: <span id="nomHospitalGestio"></span></h2> -->
+            <h2 class="text-center">LListe de malalties</h2>
+            <!-- <p class="text-center">Pacients en tractament:</p> -->
+            <div id="contenidor"></div>
+          <!-- FINAL divMalalties -->
+          <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI divControls -->
-          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divControls">
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none divs_contingut" id="divControls">
 		   <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivControls"><h3>&times;</h3></a>
             <!-- mt margin top = 8    mt margin bottom = 8 -->
             <h4  class="text-center mt-3 mb-3" >Control de l'aplicació</h4>
@@ -175,7 +186,7 @@
           <!-- FINAL divControls -->
 		   <!-- ------------------------------------------------------------------------------------ -->
 		   <!-- INICI divDiseny -->
-          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none" id="divDiseny">
+          <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none divs_contingut" id="divDiseny">
 		  <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivDiseny"><h3>&times;</h3></a>
             <!-- mt margin top = 8    mt margin bottom = 8 -->
             <h4  class="text-center mt-3 mb-3" >Explicació del diseny</h4>
@@ -206,5 +217,8 @@
     <script src="./js/dadesMalalties.js" id="dadesMalaltiesJs"></script>
     <script src="./js/comprovacions.js" id="comprovacionsJs"></script>
     <script src="./js/main.js"></script>
-  </body>
+	<script>
+		mostrarMalalties();
+	</script>
+	
 </html>
