@@ -74,7 +74,7 @@
               <!-- FINAL eleID_h4TitolPanell -->
             <button type="button" id="btnGestHospitals" class="btn btn-primary btn-block" onClick="mostraGestioHospital(this)">Hospital</button>
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
-            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties(this)">Malalties</button>
+            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraMalalties()">Malalties</button>
             <button type="button" id="btnGestMetges" class="btn btn-primary btn-block"  onClick="mostraGestioMetges()">Metges</button>
             <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp()">Control</button>
 			<a href="#">
@@ -156,6 +156,15 @@
           </div>
           <!-- FINAL divTractament -->
           <!-- ------------------------------------------------------------------------------------ -->
+		   <!-- INICI divMalalties -->
+          <div class="w-100 mx-auto align-items-center border border-primary p-4 rounded shadow bg-white d-none divs_contingut" id="divMalalties">
+		   <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivMalalties"><h3>&times;</h3></a>
+            <!-- <h2 class="text-center">Hospital: <span id="nomHospitalGestio"></span></h2> -->
+            <h2 class="text-center">LListe de malalties</h2>
+            <!-- <p class="text-center">Pacients en tractament:</p> -->
+            <div id="contenidor"></div>
+          <!-- FINAL divMalalties -->
+          <!-- ------------------------------------------------------------------------------------ -->
           <!-- INICI divControls -->
           <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none divs_contingut" id="divControls">
 		   <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivControls"><h3>&times;</h3></a>
@@ -208,5 +217,8 @@
     <script src="./js/dadesMalalties.js" id="dadesMalaltiesJs"></script>
     <script src="./js/comprovacions.js" id="comprovacionsJs"></script>
     <script src="./js/main.js"></script>
-  </body>
+	<script>
+		mostrarMalalties();
+	</script>
+	
 </html>
