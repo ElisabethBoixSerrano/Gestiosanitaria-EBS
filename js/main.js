@@ -13,6 +13,8 @@ const eleID_divControls = document.getElementById("divControls");
 
 const eleID_divDiseny = document.getElementById("divDiseny");
 
+const eleID_divMalalties = document.getElementById("divMalalties");
+
 const eleID_btnGestHospitals = document.getElementById("btnGestHospitals");
 const eleID_btnGestPacients = document.getElementById("btnGestPacients");
 const eleID_btnGestMalalties = document.getElementById("btnGestMalalties");
@@ -217,10 +219,20 @@ function eliminaClass(elementRebut, nomClass) {
           mostraMissatge(0);
     }
 
-    function mostraGestioMalaties(objecte){
+    /*function mostraGestioMalaties(objecte){
        mostraMissatge(0);
-    }
+    }*/
     
+	function mostraMalalties(objecte){
+		document.getElementById('tancaDivMalalties').onclick = function tanca() {
+            eleID_divPresentacio.classList.toggle("d-none");
+            eleID_divMalalties.classList.toggle("d-none");
+            mostraBotons();
+      }
+      eleID_divPresentacio.classList.toggle("d-none");
+      eleID_divMalalties.classList.toggle("d-none");
+      amagaBotons();
+   }
 
 
 function mostraGestioHospital(objecte){
@@ -271,6 +283,4 @@ function ocultaGestioPacients(objecteRebut){
       eleID_divDiseny.classList.toggle("d-none");
       mostraBotons();
    }
-   
-
    
