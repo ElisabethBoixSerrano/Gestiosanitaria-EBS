@@ -74,12 +74,15 @@
               <!-- FINAL eleID_h4TitolPanell -->
             <button type="button" id="btnGestHospitals" class="btn btn-primary btn-block" onClick="mostraGestioHospital(this)">Hospital</button>
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
+<<<<<<< HEAD
             <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraMalalties()">Malalties</button>
+=======
+            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties()">Malalties</button>
+>>>>>>> fa0983b8ee77b450604987b399ef0ee47eead75e
             <button type="button" id="btnGestMetges" class="btn btn-primary btn-block"  onClick="mostraGestioMetges()">Metges</button>
             <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp()">Control</button>
-			<a href="#">
-				<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny()">Explicació del diseny</button>
-			</a>
+			<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny()">Explicació del diseny</button>
+			
             <!-- <button type="button" class="btn btn-primary  btn-block" data-toggle="modal" data-target="#espaiModal">Open modal</button> -->
         </div>
         <!-- FINAL COLUMNA 1 >md 02 < -- > bloc control equerre -->
@@ -185,6 +188,16 @@
           </div>
           <!-- FINAL divControls -->
 		   <!-- ------------------------------------------------------------------------------------ -->
+		   <!-- INICI divMalalties -->
+          <div class="w-100 mx-auto align-items-center border border-primary p-4 rounded shadow bg-white d-none divs_contingut" id="divMalalties">
+		   <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivMalalties"><h3>&times;</h3></a>
+            <!-- <h2 class="text-center">Hospital: <span id="nomHospitalGestio"></span></h2> -->
+            <h2 class="text-center">LListe de malalties</h2>
+            <!-- <p class="text-center">Pacients en tractament:</p> -->
+            <div id="contenidor"></div>
+			</div>
+          <!-- FINAL divMalalties -->
+		  <!---------------------------------------------------------------------------------------->
 		   <!-- INICI divDiseny -->
           <div class="w-100 mx-auto align-items-center border mt-8 mb-8 p-4 rounded shadow bg-white d-none divs_contingut" id="divDiseny">
 		  <a href="#" class="close" data-dismiss="alert" aria-label="close" id="tancaDivDiseny"><h3>&times;</h3></a>
@@ -220,5 +233,10 @@
 	<script>
 		mostrarMalalties();
 	</script>
+<<<<<<< HEAD
 	
+=======
+  </body>
+>>>>>>> fa0983b8ee77b450604987b399ef0ee47eead75e
 </html>
+

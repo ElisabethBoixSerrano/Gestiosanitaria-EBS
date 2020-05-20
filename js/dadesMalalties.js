@@ -26,7 +26,10 @@ const llistaMalalties = ['Alzheimer','Anells vasculars','Atrèsia pulmonar amb c
                     'Tumor intraocular en la infància (Retinoblastoma)','Tumors d’òrbita','Ventricle únic',
                     'Virus del papil·loma humà (VPH)'];
 					
+<<<<<<< HEAD
 					
+=======
+>>>>>>> fa0983b8ee77b450604987b399ef0ee47eead75e
 		var text_select = "";
 		var i;
 		
