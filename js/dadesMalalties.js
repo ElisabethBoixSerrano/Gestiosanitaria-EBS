@@ -25,3 +25,16 @@ const llistaMalalties = ['Alzheimer','Anells vasculars','Atrèsia pulmonar amb c
                     'Tumor extraocular en la infància (Rabdomiosarcoma)',
                     'Tumor intraocular en la infància (Retinoblastoma)','Tumors d’òrbita','Ventricle únic',
                     'Virus del papil·loma humà (VPH)'];
+					
+		var text_select = "";
+		var i;
+		
+					function mostrarMalalties() {
+						text_select = text_select + "<select class='form-control'>";
+							for (i = 0; i < llistaMalalties.length; i++) {
+								text_select = text_select + "<option>" +llistaMalalties[i]+"</option>";
+							}
+						text_select = text_select + "</select>";
+						
+						document.getElementById("contenidor").innerHTML = text_select; 
+					}
