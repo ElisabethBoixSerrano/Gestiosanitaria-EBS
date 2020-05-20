@@ -222,12 +222,9 @@ function eliminaClass(elementRebut, nomClass) {
     /*function mostraGestioMalaties(objecte){
        mostraMissatge(0);
     }*/
-<<<<<<< HEAD
-=======
-	
-	
-	function mostraGestioMalaties(objecte){
-		document.getElementById('tancaDivMalalties').onclick = function tanca() {
+		
+    function mostraGestioMalaties(objecte){
+	document.getElementById('tancaDivMalalties').onclick = function tanca() {
             eleID_divPresentacio.classList.toggle("d-none");
             eleID_divMalalties.classList.toggle("d-none");
             mostraBotons();
@@ -236,7 +233,7 @@ function eliminaClass(elementRebut, nomClass) {
       eleID_divMalalties.classList.toggle("d-none");
       amagaBotons();
    }
->>>>>>> fa0983b8ee77b450604987b399ef0ee47eead75e
+
     
 	function mostraMalalties(objecte){
 		document.getElementById('tancaDivMalalties').onclick = function tanca() {
