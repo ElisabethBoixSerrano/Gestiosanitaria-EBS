@@ -13,11 +13,8 @@ const eleID_divControls = document.getElementById("divControls");
 
 const eleID_divDiseny = document.getElementById("divDiseny");
 
-<<<<<<< HEAD
-=======
 const eleID_divMalalties = document.getElementById("divMalalties");
 
->>>>>>> 2a884c041808f2568ce5a92678e2ac389f1a3f15
 const eleID_btnGestHospitals = document.getElementById("btnGestHospitals");
 const eleID_btnGestPacients = document.getElementById("btnGestPacients");
 const eleID_btnGestMalalties = document.getElementById("btnGestMalalties");
