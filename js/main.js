@@ -188,8 +188,6 @@ function eliminaClass(elementRebut, nomClass) {
             elementRebut.className += " " + nomClass;
       }
     }
-
-
     
    function mostraDiseny(objecte){
 		document.getElementById('tancaDivDiseny').onclick = function tanca() {
@@ -233,19 +231,6 @@ function eliminaClass(elementRebut, nomClass) {
       eleID_divMalalties.classList.toggle("d-none");
       amagaBotons();
    }
-
-    
-	function mostraMalalties(objecte){
-		document.getElementById('tancaDivMalalties').onclick = function tanca() {
-            eleID_divPresentacio.classList.toggle("d-none");
-            eleID_divMalalties.classList.toggle("d-none");
-            mostraBotons();
-      }
-      eleID_divPresentacio.classList.toggle("d-none");
-      eleID_divMalalties.classList.toggle("d-none");
-      amagaBotons();
-   }
-
 
 function mostraGestioHospital(objecte){
       document.getElementById('tancaDivHospital').onclick = function tanca() {
