@@ -74,10 +74,10 @@
               <!-- FINAL eleID_h4TitolPanell -->
             <button type="button" id="btnGestHospitals" class="btn btn-primary btn-block" onClick="mostraGestioHospital(this)">Hospital</button>
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
-            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties()">Malalties</button>
+            <button type="button" id="btnGestMalalties" class="btn btn-primary btn-block"  onClick="mostraGestioMalaties(this)">Malalties</button>
             <button type="button" id="btnGestMetges" class="btn btn-primary btn-block"  onClick="mostraGestioMetges()">Metges</button>
-            <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp()">Control</button>
-			<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny()">Explicació del diseny</button>
+            <button type="button" id="btnGestAplicacio" class="btn btn-primary btn-block"  onClick="mostraGestioApp(this)">Control</button>
+			<button type="button" id="btnGestDiseny" class="btn btn-primary btn-block boton_explicacio_diseny" onclick="mostraDiseny(this)">Explicació del diseny</button>
 			
             <!-- <button type="button" class="btn btn-primary  btn-block" data-toggle="modal" data-target="#espaiModal">Open modal</button> -->
         </div>
@@ -125,7 +125,7 @@
             <!-- INICI botonsIntroHospital -->
             <div class="text-center" id="botonsIntroHospital">
               <hr style="border: 1px solid green; border-radius: 10px;">
-              <button type="button" class="btn btn-primary mt-4">Crear</button>
+              <button type="button" class="btn btn-primary mt-4" onClick="crearHospital()">Crear</button>
               <!-- <button type="button" class="btn btn-primary mt-4" onClick="ocultaGestioHospital(this)">Torna</button> -->
             </div>
             <!-- FINAL botonsIntroHospital -->
@@ -222,4 +222,6 @@
 	</script>
   </body>
 </html>
+
+
 
