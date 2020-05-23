@@ -16,3 +16,18 @@ a {
     border-radius: 20px !important;
     border: 2px solid #18a3eb !important;
 }
+
+
+.oscuro{ 
+    background-color: #1f1f1f; 
+    color: #f1eded; 
+}
+
+p {
+	color: black !important;
+}
+
+h2, h4{
+	color: black !important;	
+}
+
