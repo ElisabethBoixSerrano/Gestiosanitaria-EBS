@@ -15,6 +15,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
  PER MODAL -->
 
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
@@ -27,7 +28,15 @@
    
   </head>
   <body>
-    <!-- INICI container -->
+	<div style="margin-top: 2%; margin-left: 48%;">
+		<button type="button" class="btn btn-dark" onclick="cambiarModo()">Oscuro / Claro</button>
+	</div>
+	
+	<div style="margin-top: 1%; margin-left: 48%;">
+		<button style="width: 9%;" class="btn btn-primary" ="button" id="zoom-in"><i style="font-size: 20px;" class="fa fa-search-plus"></i></button>
+		<button style="width: 9%;" class="btn btn-primary"  type="button" id="zoom-out"><i style="font-size: 20px;" class="fa fa-search-minus"></i></button>
+    </div>
+	<!-- INICI container -->
     <div class="container">
       <h1  class="text-center mt-3 mb-3" >Aplicació gestió Sanitària</h1>
       <!-- ==================================================================================== -->  
@@ -70,7 +79,7 @@
         <!-- INICI COLUMNA 1 >md 02 < -- > bloc control equerre --> 
         <div class="col-md-2" id="divPanellGestio">
               <!-- INICI eleID_h4TitolPanell -->
-              <h4 class="text-center" id="h4TitolPanell">Panell de Gestió</h4> <!-- mt margin top = 5 -->
+              <h1 style="font-size: 25px;" class="text-center" id="h4TitolPanell">Panell de Gestió</h1> <!-- mt margin top = 5 -->
               <!-- FINAL eleID_h4TitolPanell -->
             <button type="button" id="btnGestHospitals" class="btn btn-primary btn-block" onClick="mostraGestioHospital(this)">Hospital</button>
             <button type="button" id="btnGestPacients" class="btn btn-primary btn-block"  onClick="mostraGestioPacients(this)">Pacients</button>
@@ -193,7 +202,9 @@
             <div class="form-row" id="formControls">
               <div class="text-center">
                 <p>
-					Primer canvi notable es que, he afegit un altre boto precisament per poder explicar tot el que he anat disenyant per la web.
+					Primer canvi notable és que, he afegit un altre boto precisament per poder explicar tot el que he anat dissenyant per la web.
+					El segon canvi que he fet és que a partir de botons es pot augmentar el zoom a la pàgina web i disminuir.
+					La tercera cosa que també implementat és un botó que fa funció de "modo oscuro", que quant es clica els colors de la pàgina canvien a colors més foscos.
 				</p>
                 <!--<button type="button" class="btn btn-primary mt-4" onClick="ocultaDiseny(this)">Torna</button>-->
               </div>
@@ -219,9 +230,43 @@
     <script src="./js/main.js"></script>
 	<script>
 		mostrarMalalties();
+		
+			$('#zoom-in').click(function() {
+   		updtZoom(0.1);
+	});
+
+	$('#zoom-out').click(function() {
+   		updtZoom(-0.1);
+	});
+
+	zoomLvl = 1;
+
+	var updtZoom = function(zoom) {
+   		zoomLvl += zoom;
+   $('body').css({ zoom: zoomLvl, '-moz-transform': 'scale(' + zoomLvl + ')' });
+	}
+	
+	
+	
+	
+	function cambiarModo() { 
+    var cuerpoweb = document.body; 
+    cuerpoweb.classList.toggle("oscuro"); 
+}
+
+
+
+function cambiarModo() { 
+        var cuerpoweb = document.body; 
+        cuerpoweb.classList.toggle("oscuro"); 
+      } 
+
+ 
 	</script>
   </body>
 </html>
+
+
 
 
 
